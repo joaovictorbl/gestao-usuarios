@@ -1,14 +1,17 @@
 package gestaousuariocom.br.dto;
 
-import lombok.Data;
-
 public class Request {
-
     private String nome;
     private String email;
     private String senha;
 
-    private Request(){
+    public Request() {
+    }
+
+    public Request(String nome, String email, String senha) {
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
     }
 
     public String getNome() {

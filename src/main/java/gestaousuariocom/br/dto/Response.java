@@ -1,14 +1,16 @@
 package gestaousuariocom.br.dto;
 
-import lombok.Data;
-
-@Data
 public class Response {
 
     private String nome;
     private String email;
 
-    private Response(){
+    public Response() {
+    }
+
+    public Response(String nome, String email) {
+        this.nome = nome;
+        this.email = email;
     }
 
     public String getNome() {
