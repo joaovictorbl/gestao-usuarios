@@ -7,6 +7,8 @@ import gestaousuariocom.br.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class UsuarioServiceImpl implements UsuarioService {
 
@@ -15,11 +17,12 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public Response salvar(Request usuario) {
-        return repository.save();
+        return repository.salvar(usuario);
     }
 
     @Override
-    public Response obterUsuario(Request usuario) {
-        return nullgi;
+    public Response obterUsuarioPorNome(Request usuario) {
+        return repository.findbyNome(usuario.getNome());
     }
+
 }
