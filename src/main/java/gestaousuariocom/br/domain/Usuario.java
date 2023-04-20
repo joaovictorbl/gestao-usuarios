@@ -5,11 +5,12 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 
 @Entity
-public class Usuario implements Serializable  {
-
+@Table(name = "Usuario")
+public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -20,7 +21,14 @@ public class Usuario implements Serializable  {
     private String email;
     private String senha;
 
-    private Usuario() {
+    public Usuario() {
+    }
+
+    public Usuario(String id, String nome, String email, String senha) {
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
     }
 
     public String getId() {
@@ -53,16 +61,6 @@ public class Usuario implements Serializable  {
 
     public void setSenha(String senha) {
         this.senha = senha;
-    }
-
-    @Override
-    public String toString() {
-        return "Usuario{" +
-                "id='" + id + '\'' +
-                ", nome='" + nome + '\'' +
-                ", email='" + email + '\'' +
-                ", senha='" + senha + '\'' +
-                '}';
     }
 
 
