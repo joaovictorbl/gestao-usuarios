@@ -23,10 +23,10 @@ public class UsuarioServiceImpl implements UsuarioService {
     private ResponseMapper responseMapper;
 
     @Override
-    public Response salvar(Request usuario) {
-        Usuario usuarionovo = requestMapper.requestToUsuario(usuario);
-        repository.save(usuarionovo);
-        return responseMapper.usuarioToResponse(usuarionovo);
+    public Response incluirUsuario(Request usuario) {
+        Usuario usuarioNovo = requestMapper.requestToUsuario(usuario);
+        repository.save(usuarioNovo);
+        return responseMapper.usuarioToResponse(usuarioNovo);
     }
 
     @Override

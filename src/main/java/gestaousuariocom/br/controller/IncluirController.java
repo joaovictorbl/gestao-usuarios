@@ -20,6 +20,6 @@ public class IncluirController {
 
     @PostMapping
     private ResponseEntity<Response> incluirUsuario(@RequestBody Request usuario) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(service.salvar(usuario));
+        return ResponseEntity.status(HttpStatus.CREATED).body(service.incluirUsuario(usuario));
     }
 }
