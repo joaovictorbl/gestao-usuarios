@@ -6,12 +6,12 @@ import gestaousuariocom.br.dto.Response;
 import gestaousuariocom.br.mapper.request.RequestMapper;
 import gestaousuariocom.br.mapper.response.ResponseMapper;
 import gestaousuariocom.br.repository.UsuarioRepository;
-import gestaousuariocom.br.service.UsuarioService;
+import gestaousuariocom.br.service.IncluirUsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UsuarioServiceImpl implements UsuarioService {
+public class IncluirUsuarioImpl implements IncluirUsuarioService {
 
     @Autowired
     private UsuarioRepository repository;
@@ -27,11 +27,5 @@ public class UsuarioServiceImpl implements UsuarioService {
         Usuario usuarioNovo = requestMapper.requestToUsuario(usuario);
         repository.save(usuarioNovo);
         return responseMapper.usuarioToResponse(usuarioNovo);
-    }
-
-    @Override
-    public Response obterUsuarioPorNome(String nome) {
-        Usuario usuario = repository.findByNome(nome);
-        return responseMapper.usuarioToResponse(usuario);
     }
 }
