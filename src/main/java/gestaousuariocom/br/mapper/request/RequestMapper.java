@@ -4,7 +4,7 @@ import gestaousuariocom.br.domain.Usuario;
 import gestaousuariocom.br.dto.Request;
 import org.mapstruct.Mapper;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface RequestMapper {
 
     Usuario requestToUsuario(Request request);
